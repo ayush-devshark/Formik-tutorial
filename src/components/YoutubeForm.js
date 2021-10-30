@@ -5,12 +5,15 @@ const YoutubeForm = () => {
     // return's a object
     const formik = useFormik({
         initialValues: { name: 'rob', email: '', channel: '' },
+        onSubmit: values => {
+            console.log(values);
+        },
     });
 
-    console.log(formik.values);
+    // console.log(formik.values);
     return (
         <div>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
                 <label htmlFor='name'>Name</label>
                 <input
                     type='text'
@@ -38,7 +41,7 @@ const YoutubeForm = () => {
                     value={formik.values.channel}
                 />
 
-                <button>Submit</button>
+                <button type='submit'>Submit</button>
             </form>
         </div>
     );
