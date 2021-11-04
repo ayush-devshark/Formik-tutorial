@@ -13,3 +13,5 @@
 -   Form - wrapper around form component
 -   Field - input tag, don't need to specify getFieledProps
 -   ErrorMessage = Field visited and error exists
+
+-   Nested objects = In initialValues, use '.' in name attribute to access property of object
