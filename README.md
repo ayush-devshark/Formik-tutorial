@@ -15,3 +15,6 @@
 -   ErrorMessage = Field visited and error exists
 
 -   Nested objects = In initialValues, use '.' in name attribute to access property of object
+-   Groupinf fields as Array object
+
+-   FieldArray Component = Dynamic form fields
