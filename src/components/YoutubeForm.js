@@ -31,7 +31,16 @@ const validationSchema = Yup.object({
         .email('Invalida email format')
         .required('This field is required'),
     channel: Yup.string().required('This field is required'),
+    comments: Yup.string().required('This field is required'),
 });
+
+const validateComments = value => {
+    let error;
+    if (!value) {
+        error = 'required';
+    }
+    return error;
+};
 
 const YoutubeForm = () => {
     return (
@@ -39,8 +48,8 @@ const YoutubeForm = () => {
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={onSubmit}
-            validateOnChange={false}
-            validateOnBlur={false}
+            // validateOnChange={false}
+            // validateOnBlur={false}
         >
             <Form>
                 <div className='form-control'>
@@ -70,7 +79,13 @@ const YoutubeForm = () => {
 
                 <div className='form-control'>
                     <label htmlFor='comments'>Comments</label>
-                    <Field as='textarea' id='comments' name='comments' />
+                    <Field
+                        as='textarea'
+                        id='comments'
+                        name='comments'
+                        validate={validateComments}
+                    />
+                    <ErrorMessage name='comments' component={TextError} />
                 </div>
 
                 <div className='form-control'>
@@ -123,7 +138,7 @@ const YoutubeForm = () => {
                     <label>List of phone numbers</label>
                     <FieldArray name='phNumbers'>
                         {fieldArrayProps => {
-                            console.log(fieldArrayProps);
+                            // console.log(fieldArrayProps);
                             const { push, remove, form } = fieldArrayProps;
                             const { values } = form;
                             const { phNumbers } = values;

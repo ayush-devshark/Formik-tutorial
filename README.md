@@ -20,4 +20,4 @@
 -   FieldArray Component = Dynamic form fields
 -   FastField = optimised version of Field Component, independent of other fields in form
 
--   validateOnChange, validateOnBlur = Telling formik not to validate on change, blur event
+-   validateOnChange, validateOnBlur = Telling formik not to validate on change, blur event (true by default)
