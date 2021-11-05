@@ -18,3 +18,4 @@
 -   Groupinf fields as Array object
 
 -   FieldArray Component = Dynamic form fields
+-   FastField = optimised version of Field Component, independent of other fields in form
